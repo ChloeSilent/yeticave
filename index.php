@@ -18,38 +18,39 @@ $goods = [
         'name' => '2014 Rossignol District Snowboard',
         'category' => $categories['Boards&Ski'],
         'price' => 10990,
-        'url' => 'img/lot-1.jpg',
-        'image' => 'img/lot-1.jpg'
+        'image' => 'lot-1.jpg'
     ], [
         'name' => 'DC Ply Mens 2016/2017 Snowboard',
         'category' => $categories['Boards&Ski'],
         'price' => 159999,
-        'image' => 'img/lot-2.jpg'
+        'image' => 'lot-2.jpg'
     ], [
         'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
         'category' => $categories['Bindings'],
         'price' => 8000,
-        'image' => 'img/lot-3.jpg'
+        'image' => 'lot-3.jpg'
     ], [
         'name' => 'Ботинки для сноуборда DC Mutiny Charcoal',
         'category' => $categories['Boots'],
         'price' => 10999,
-        'image' => 'img/lot-4.jpg'
+        'image' => 'lot-4.jpg'
     ],
     [
         'name' => 'Куртка для сноуборда DC Mutiny Charcoal',
         'category' => $categories['Wear'],
         'price' => 7500,
-        'image' => 'img/lot-5.jpg'
+        'image' => 'lot-5.jpg'
     ],
     [
         'name' => 'Маска Oakley Canopy',
         'category' => $categories['Others'],
         'price' => 5400,
-        'image' => 'img/lot-6.jpg'
+        'image' => 'lot-6.jpg'
     ]
 ];
+/**
 
+*/ 
 function showPrice($price)
 {
     return number_format(ceil($price), 0, ',', ' ') . " " . "р";
@@ -106,9 +107,15 @@ function showPrice($price)
                 <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
                 <ul class="promo__list">
                     <!--заполните этот список из массива категорий-->
-                    <li class="promo__item promo__item--boards">
+                    <!-- <li class="promo__item promo__item--boards">
                         <a class="promo__link" href="pages/all-lots.html">Имя категории</a>
-                    </li>
+                    </li> -->
+                    <?php
+            foreach ($categories as $menuItem): ?>
+                <li class="promo__item promo__item--boards">
+                    <a class="promo__link"  href="all-lots.html"><?=$menuItem?></a>
+                </li>
+            <?php endforeach; ?>
                 </ul>
             </section>
             <section class="lots">
@@ -121,7 +128,7 @@ function showPrice($price)
             foreach ($goods as $good):?>
                     <li class="lots__item lot">
                         <div class="lot__image">
-                        <img src="<?=$good['image']; ?>" width="350" height="260" alt="<?=$good['category']; ?>">
+                        <img src="img/<?=$good['image']; ?>" width="350" height="260" alt="<?=$good['category']; ?>">
                         </div>
                         <div class="lot__info">
                         <span class="lot__category"><?=$good['category']; ?></span>
