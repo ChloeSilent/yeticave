@@ -55,8 +55,6 @@ function showPrice($price)
 {
     return number_format(ceil($price), 0, ',', ' ') . " " . "р";
 };
-
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
