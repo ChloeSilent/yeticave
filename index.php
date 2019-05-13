@@ -5,45 +5,45 @@ $user_name = 'Ольга'; // укажите здесь ваше имя
 $user_avatar = 'img/user.jpg';
 
 $categories = [
-    'Boards&Ski' => 'Доски и лыжи',
-    'Bindings' => 'Крепления',
-    'Boots' => 'Ботинки',
-    'Wear' => 'Одежда',
-    'Equipment' => 'Инструменты',
-    'Others' => 'Разное'
+    'boards' => 'Доски и лыжи',
+    'attachment' => 'Крепления',
+    'boots' => 'Ботинки',
+    'clothing' => 'Одежда',
+    'tools' => 'Инструменты',
+    'other' => 'Разное'
 ];
 
 $goods = [
     [
         'name' => '2014 Rossignol District Snowboard',
-        'category' => $categories['Boards&Ski'],
+        'category' => $categories['boards'],
         'price' => 10990,
         'image' => 'lot-1.jpg'
     ], [
         'name' => 'DC Ply Mens 2016/2017 Snowboard',
-        'category' => $categories['Boards&Ski'],
+        'category' => $categories['boards'],
         'price' => 159999,
         'image' => 'lot-2.jpg'
     ], [
         'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-        'category' => $categories['Bindings'],
+        'category' => $categories['attachment'],
         'price' => 8000,
         'image' => 'lot-3.jpg'
     ], [
         'name' => 'Ботинки для сноуборда DC Mutiny Charcoal',
-        'category' => $categories['Boots'],
+        'category' => $categories['boots'],
         'price' => 10999,
         'image' => 'lot-4.jpg'
     ],
     [
         'name' => 'Куртка для сноуборда DC Mutiny Charcoal',
-        'category' => $categories['Wear'],
+        'category' => $categories['clothing'],
         'price' => 7500,
         'image' => 'lot-5.jpg'
     ],
     [
         'name' => 'Маска Oakley Canopy',
-        'category' => $categories['Others'],
+        'category' => $categories['other'],
         'price' => 5400,
         'image' => 'lot-6.jpg'
     ]
@@ -51,7 +51,7 @@ $goods = [
 /**
 
 */ 
-function showPrice($price)
+function show_price($price)
 {
     return number_format(ceil($price), 0, ',', ' ') . " " . "р";
 };
@@ -134,7 +134,7 @@ function showPrice($price)
                             <div class="lot__state">
                                 <div class="lot__rate">
                                     <span class="lot__amount">Стартовая цена</span>
-                                    <span class="lot__cost"><?=showPrice($good['price']); ?></span>
+                                    <span class="lot__cost"><?=show_price($good['price']); ?></span>
                                 </div>
                                 <div class="lot__timer timer">
                                     12:23
