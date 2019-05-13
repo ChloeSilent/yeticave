@@ -49,11 +49,13 @@ $goods = [
     ]
 ];
 /**
-
+ * показываем цену в необходимом формате
+ * @param {number} $price - изначальная цена
+ * @return {string} - строчка с ценой, где тысячные отделены и добавлена p в конце
 */ 
 function show_price($price)
 {
-    return number_format(ceil($price), 0, ',', ' ') . " " . "р";
+    return number_format(ceil($price), 0, ',', ' ') . " р";
 };
 ?>
 <!DOCTYPE html>
