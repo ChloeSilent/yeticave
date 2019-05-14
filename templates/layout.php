@@ -1,11 +1,3 @@
-<?php
-$is_auth = rand(0, 1);
-
-$user_name = 'Ольга'; // укажите здесь ваше имя
-$user_avatar = 'img/user.jpg';
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -49,8 +41,7 @@ $user_avatar = 'img/user.jpg';
             </nav>
         </div>
     </header>
-
-    <?= include "templates/index.php"; ; ?>
+    <?=$content?>
 </div>
 
 <footer class="main-footer">
