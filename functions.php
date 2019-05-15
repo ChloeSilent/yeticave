@@ -1,9 +1,13 @@
 <?php
-
+/**
+ * показывает цену в рублях с отделение тысячных пробелом
+ * @param $price {number} - сумма
+ * @return {string} сумма, где тысячная часть отделена проблом и стоит знак рубля
+ */
 function show_price($price)
 {
     return number_format(ceil($price), 0, ',', ' ') . " " . "р";
-}
+};
 
 /**
  * рендерит страницу из шаблона и данных для него
@@ -17,9 +21,11 @@ function render_template($template_name, $data)
     if (!is_readable($template_name)) {
         return "";
     };
-    ob_start();
+   ob_start();
     extract($data);
     require($template_name);
     return ob_get_clean();
 }
+
+
 

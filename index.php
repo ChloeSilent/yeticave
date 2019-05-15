@@ -18,5 +18,6 @@ $layout = render_template("layout", [
     "categories" => $categories
 ]);
 
+
 print($layout);
 
