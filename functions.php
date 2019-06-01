@@ -27,5 +27,19 @@ function render_template($template_name, $data)
     return ob_get_clean();
 }
 
+/**
+ * возвращает разницу в часах и мунутах между датами
+ * @param $date1 {string} - дата из которой нужно вычитать
+ * @param $date2 {int} - вычитаемая дата, задается в unixtime
+ * @return {array} массив с 2мя ключами, значение первого - остав часы, второго - остав минуты
+ */
+
+function cout_time ($date1, $date2){
+$diff = $date2 - $date1;
+$remain_hours = floor($diff/(60*60));
+$remain_min = round(($diff-$remain_hours*60*60)/(60));
+
+return array($remain_hours, $remain_min);
+}
 
 

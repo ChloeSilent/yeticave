@@ -30,7 +30,7 @@
                                     <span class="lot__cost"><?=show_price($good["price"]); ?></span>
                                 </div>
                                 <div class="lot__timer timer">
-                                    12:23
+                                <?= $remain_hours ?>:<?= $remain_min ?>
                                 </div>
                             </div>
                     </div>
