@@ -6,8 +6,8 @@ $is_auth = rand(0, 1);
 $content = render_template("index", [
     "categories" => $categories,
     "goods" => $goods,
-    "remain_hours" => cout_time ($today, $tomorrow)[0],
-    "remain_min" => cout_time ($today, $tomorrow)[1]
+    "today" => $today,
+    "tomorrow" => $tomorrow
 ]);
 $layout = render_template("layout", [
     "title" => $title,
