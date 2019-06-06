@@ -23,7 +23,7 @@ function render_template($template_name, $data)
     };
    ob_start();
     extract($data);
-    require($template_name);ы
+    require($template_name);
     return ob_get_clean();
 }
 
