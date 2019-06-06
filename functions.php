@@ -23,7 +23,7 @@ function render_template($template_name, $data)
     };
    ob_start();
     extract($data);
-    require($template_name);
+    require($template_name);ы
     return ob_get_clean();
 }
 
@@ -31,15 +31,13 @@ function render_template($template_name, $data)
  * возвращает разницу в часах и мунутах между датами
  * @param $date1 {string} - дата из которой нужно вычитать
  * @param $date2 {int} - вычитаемая дата, задается в unixtime
- * @return {string}  с 2мя значениями, разделенным двоеточием, значение первого - остав часы, второго - остав минуты
+ * @return $remain_time {int} отсавшееся время в часах и минутах
  */
 
 function count_time ($date1, $date2){
 $diff = $date2 - $date1;
-$remain_hours = floor($diff/(60*60));
-$remain_min = round(($diff-$remain_hours*60*60)/(60));
-
-return "$remain_hours:$remain_min";
+$remain_time = date("H:i", $diff );
+return "$remain_time";
 }
 
 
