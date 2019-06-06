@@ -5,7 +5,9 @@ $title = "Главная";
 $is_auth = rand(0, 1);
 $content = render_template("index", [
     "categories" => $categories,
-    "goods" => $goods
+    "goods" => $goods,
+    "today" => $today,
+    "tomorrow" => $tomorrow
 ]);
 $layout = render_template("layout", [
     "title" => $title,

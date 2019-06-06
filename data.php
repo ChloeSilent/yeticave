@@ -1,5 +1,4 @@
 <?php
-
 $categories = [
     "boards" => "Доски и лыжи",
     "attachment" => "Крепления",
@@ -47,3 +46,8 @@ $goods = [
 
 $user_name = "Ольга"; // укажите здесь ваше имя
 $user_avatar = "img/user.jpg";
+
+
+$tomorrow = date(strtotime('tomorrow'));
+$today = time();
+
