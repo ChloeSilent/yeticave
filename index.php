@@ -1,6 +1,7 @@
 <?php
 require_once("functions.php");
 require_once("data.php");
+require_once("goods.php");
 $title = "Главная";
 $is_auth = rand(0, 1);
 $content = render_template("index", [

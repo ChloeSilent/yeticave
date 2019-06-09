@@ -36,7 +36,7 @@ function render_template($template_name, $data)
 
 function count_time ($date1, $date2){
 $diff = $date2 - $date1;
-$remain_time = date("H:i", $diff );
+$remain_time = date("H:i:s", $diff );
 return "$remain_time";
 }
 

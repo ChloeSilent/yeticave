@@ -13,23 +13,27 @@
     <section class="lots">
         <div class="lots__header">
             <h2>Открытые лоты</h2>
+            <p><?=print_r( date("Y-m-d H:i:s",$tomorrow));?></p>
+            <p><?=print_r( date("Y-m-d H:i:s",$today));?></p>
+
         </div>
         <ul class="lots__list">
-            <?php foreach ($goods as $good):?>
+            <?php foreach ($goods as $good=>$value):?>
                 <li class="lots__item lot">
                     <div class="lot__image">
-                        <img src="img/<?=$good["image"]; ?>" width="350" height="260" alt="<?=$good["category"]; ?>">
+                        <img src="img/<?=$value["image"]; ?>" width="350" height="260" alt="<?=$value["category"]; ?>">
                     </div>
                     <div class="lot__info">
-                        <span class="lot__category"><?=$good["category"]; ?></span>
-                        <h3 class="lot__title"><a class="text-link" href="lot.html"><?=$good["name"]; ?></a>
+                        <span class="lot__category"><?=$value["category"]; ?></span>
+                        <h3 class="lot__title"><a class="text-link" href="lot<?=$good;?>.php"><?=$value["name"]; ?></a>
                             <div class="lot__state">
                                 <div class="lot__rate">
                                     <span class="lot__amount">Стартовая цена</span>
-                                    <span class="lot__cost"><?=show_price($good["price"]); ?></span>
+                                    <span class="lot__cost"><?=show_price($value["price"]); ?></span>
+
                                 </div>
                                 <div class="lot__timer timer">
-                                <?=count_time ($today, $tomorrow); ?>
+                                <?=count_time ($tomorrow, $now); ?>
                                 </div>
                             </div>
                     </div>
